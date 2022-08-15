@@ -1,4 +1,9 @@
-.test {
-    font-size: 30px;
-    text-align: center;
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .content {
+        font-size: 30px;
+    }
 }

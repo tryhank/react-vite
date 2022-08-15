@@ -2,14 +2,15 @@
   "name": "react-vite",
   "private": true,
   "version": "0.0.0",
-  "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
     "lint": "eslint --ext .js,.jsx,.ts,.tsx --fix --quiet ./",
     "prepare": "husky install",
-    "pre-commit": "lint-staged --no-stash"
+    "pre-commit": "lint-staged --no-stash",
+    "extract": "lingui extract",
+    "compile": "lingui compile"
   },
   "lint-staged": {
     "*.{js,jsx,tsx,ts}": [
@@ -17,18 +18,25 @@
     ]
   },
   "dependencies": {
+    "@lingui/react": "^3.14.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.3.0"
   },
   "devDependencies": {
     "@babel/core": "^7.18.10",
+    "@babel/preset-typescript": "^7.18.6",
+    "@lingui/cli": "^3.14.0",
+    "@lingui/core": "^3.14.0",
+    "@lingui/macro": "^3.14.0",
     "@types/node": "^18.7.3",
     "@types/react": "^18.0.17",
     "@types/react-dom": "^18.0.6",
     "@typescript-eslint/eslint-plugin": "^5.33.0",
     "@typescript-eslint/parser": "^5.33.0",
+    "@vitejs/plugin-react": "^2.0.1",
     "autoprefixer": "^10.4.8",
+    "babel-plugin-macros": "^3.1.0",
     "eslint": "^8.22.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.2.1",
@@ -40,6 +48,8 @@
     "sass-loader": "^13.0.2",
     "typescript": "^4.6.4",
     "typescript-plugin-css-modules": "^3.4.0",
+    "unplugin-auto-import": "^0.11.1",
+    "unplugin-lingui-loader": "^0.1.0",
     "vite": "^3.0.7",
     "vite-plugin-eslint": "^1.8.0"
   }
